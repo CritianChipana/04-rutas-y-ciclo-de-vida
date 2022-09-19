@@ -1,15 +1,19 @@
 <template>
+  <Navbar/>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <AboutPage/> -->
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// import Navbar from "./modules/shared/components/Navbar";
+import { defineAsyncComponent } from 'vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar: defineAsyncComponent(() => import('./modules/shared/components/Navbar'))
   }
 }
 </script>
